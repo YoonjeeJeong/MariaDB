@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        #submitBtn{
+            border-color: black;
+            background-color: white;
+            float: right;
+            width: 100px;
+        }
+        #submitBtn:hover{
+            background-color: #e5e5e5;
+        }
+
+        #afBtn{
+            border-color: black;
+            background-color: white;
+            margin-left: 70px;
+            width: 100px;
+        }
+        #afBtn:hover{
+            background-color: #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+    	<Script>
+            function fnSubmit(){
+                var user_id = document.subForm.user_id;
+                var user_pw = document.subForm.user_pw;
+                var user_email = document.subForm.user_email;
+                var user_gender = document.subForm.user_gender;
+
+                if(user_id.value==""){
+	                alert("아이디를 입력하세요");
+	                return false;
+                }
+                if(user_pw.value==""){
+	                alert("비밀번호를 입력하세요");
+	                return false;
+                }
+                if(user_email.value==""){
+	                alert("이메일을 입력하세요");
+	                return false;
+                }
+                if(user_gender.value==""){
+	                alert("성별을 선택하세요");
+	                return false;
+                }
+            }
+        </Script>
+
+
+        <form name="subForm" onsubmit="return fnSubmit();" method="post" action="RegiStep03.jsp">
+            <table>
+            <tr>
+                <td>아이디<br/><br/></td>
+                <td>
+                    <input type="text" name="user_id" style="width: 222px;" >
+                    <br/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호<br/><br/></td>
+                <td>
+                    <input type="password" name="user_pw" style="width: 222px;" >
+                    <br/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>이메일<br/><br/></td>
+                <td>
+                    <input type="text" name="user_email" style="width: 222px;" >
+                    <br/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>성별<br/><br/></td>
+                <td>
+                    <input type="radio" name="user_gender" id="mm" value="male"/> <label for="mm">남자</label>
+	                <input type="radio" name="user_gender" id="ff" value="female"/><label for="ff">여자</label>
+                    <br/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" id="afBtn" value="이전">
+ 
+                    <input type="submit" id="submitBtn" value="다음">
+                </td>
+            </tr>
+        </table>
+        </form>
+</body>
+</html>
